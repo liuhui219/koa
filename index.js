@@ -22,14 +22,7 @@ app.use(async (ctx, next) => {
     }
 });
 
-app.use(async (ctx, next) => {
-    if (ctx.request.path === '/test') {
-		console.log(ctx.request.origin)
-        ctx.response.body = data.toString();
-    } else {
-        await next();
-    }
-});
+ 
 
 app.use(async (ctx, next) => {
     if (ctx.request.path === '/error') {
@@ -38,4 +31,4 @@ app.use(async (ctx, next) => {
         await next();
     }
 }); 
-app.listen(2000);
+app.listen(3000);
