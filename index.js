@@ -11,9 +11,7 @@ const serve = require('koa-static');
 const main = serve(path.join(__dirname));
 app.use(main);
 // response
-app.use(bodyParser());
-console.log(os.networkInterfaces())
-var data = fs.readFileSync('input.txt'); 
+app.use(bodyParser()); 
 app.use(async (ctx, next) => {
 	
     if (ctx.request.path === '/') {
